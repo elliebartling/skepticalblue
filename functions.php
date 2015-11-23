@@ -338,6 +338,53 @@ function sb_add_recent_posts() {
 }
 
 
+function fb_opengraph() {
+    global $post;
+ 
+    if(is_single()) {
+        if(has_post_thumbnail($post->ID)) {
+            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+        } 
+        else {
+            $img_src = get_stylesheet_directory_uri() . '/img/TSL-eyes-large.png';
+        }
+        
+        if($excerpt = $post->post_excerpt) {
+            $excerpt = strip_tags($post->post_excerpt);
+            $excerpt = str_replace("", "'", $excerpt);
+        } 
+        else {
+            $excerpt = get_bloginfo('description');
+        }
+        $title = get_the_title();
+        $link = get_the_permalink();
+    }
+    elseif (is_home()) {
+    	$img_src = get_stylesheet_directory_uri() . '/img/TSL-eyes-large.png';
+    	$excerpt = "Free thought. Free people.";
+    	$title = "Home";
+    	$link = "http://www.skepticallibertarian.com/";
+    }
+    else {
+    	$img_src = get_stylesheet_directory_uri() . '/img/TSL-eyes-large.png';
+    	$excerpt = "Free thought. Free people.";
+    	$title = get_the_title();
+    	$link = get_the_permalink();
+    }
+        ?>
+ 
+    <meta property="og:title" content="<?php echo $title ?>"/>
+    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="<?php echo $link ?>"/>
+    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+    <meta property="og:image" content="<?php echo $img_src; ?>"/>
+ 
+<?php
+}
+add_action('wp_head', 'fb_opengraph', 5);
+
+
 
 
 //* Customize the post meta function
