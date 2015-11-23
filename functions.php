@@ -324,10 +324,15 @@ function sb_add_recent_posts() {
 	if( is_home() ) {
 		echo '<div id="recent-posts-header">
 					<h1 class="content-header">Recent Posts</h1>
-					<div class="content-subhead">
-						<p class="content-desc">Our latest and greatest original posts.</p>
-						<a href="/blog"><p class="content-all">View All</p></a>
-					</div>
+						<table class="content-subhead">
+							<tr>
+								<td>
+									<p class="content-desc">Our latest and greatest original posts.</p>
+								</td>
+								<td>
+									<a href="/blog"><p class="content-all">View All</p></a>
+								</td>
+						</table>
 				  </div>';
 		}
 }

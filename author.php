@@ -41,6 +41,23 @@ add_action('genesis_after_loop', 'skeptical_close_div');
 
 
 
+
+
+add_action( 'pre_get_posts', 'be_change_event_posts_per_page' );
+/**
+ * Change Posts Per Page for Event Archive
+ * 
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/customize-the-wordpress-query/
+ * @param object $query data
+ *
+ */
+function be_change_event_posts_per_page( $query ) {
+    $query->set( 'posts_per_page', '18' );
+}
+
+
+
 function load_more() {
   if(is_author()){
       $author = get_the_author_meta('ID');
