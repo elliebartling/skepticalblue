@@ -384,7 +384,22 @@ function fb_opengraph() {
 }
 add_action('wp_head', 'fb_opengraph', 5);
 
-
+function jeherve_custom_image( $media, $post_id, $args ) {
+    if ( $media ) {
+        return $media;
+    } else {
+        $permalink = get_permalink( $post_id );
+        $url = apply_filters( 'jetpack_photon_url', get_stylesheet_directory_uri() . '/img/TSL-eyes-large.png' );
+     
+        return array( array(
+            'type'  => 'image',
+            'from'  => 'custom_fallback',
+            'src'   => esc_url( $url ),
+            'href'  => $permalink,
+        ) );
+    }
+}
+add_filter( 'jetpack_images_get_images', 'jeherve_custom_image', 10, 3 );
 
 
 //* Customize the post meta function
