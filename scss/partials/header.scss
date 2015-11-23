@@ -1,6 +1,6 @@
 header .wrap {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row;
 }
 
 .title-area, .header-widget-area, .header-left.widget-area {
@@ -13,7 +13,7 @@ header .wrap {
 
 .title-area {
 	order: 1;
-	/*flex-grow:2;*/
+	flex-grow:2;
 }
 
 .header-widget-area {
@@ -47,16 +47,23 @@ button#support-us-button {
 
 	.title-area
 	{
-		width: 420px;
+		width: 100% !important;
 	}
 
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 590px) {
 	h1.site-title {
 		display: none;
 	}
-	.title-area {
-		width: 90px;
+
+	#title-img {
+		margin:auto;
+		display: inline-block;
 	}
+
+	.header-left.widget-area {
+		width: auto;
+	}
+
 }
