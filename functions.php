@@ -330,7 +330,7 @@ function sb_add_recent_posts() {
 									<p class="content-desc">Our latest and greatest original posts.</p>
 								</td>
 								<td>
-									<a href="/blog"><p class="content-all">View All</p></a>
+									<a href="/blog"><p class="content-all">View&nbsp;All</p></a>
 								</td>
 						</table>
 				  </div>';
