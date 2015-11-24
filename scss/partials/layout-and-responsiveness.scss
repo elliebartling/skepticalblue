@@ -144,4 +144,32 @@ li.wp_rss_retriever_item {
 
 
 
+/* Font Page */
+
+
+@media only screen and (max-width: 600px) {
+	body.home main.content {
+		margin-left: 0%;
+		margin-right: 0%;
+	}
+
+	body.home #recent-posts-header {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	body.home .entry-header {
+		padding: 10% 10% 0%;
+	}
+
+	body.home .entry-content {
+		padding: 10% 10% 0%;
+	}
+
+	body.home .entry-content p:last-of-type {
+		display:none;
+	}
+}
+
+
 
