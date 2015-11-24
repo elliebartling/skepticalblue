@@ -21,6 +21,14 @@ header .wrap {
 	order: 2;
 }
 
+body.admin-bar .site-header, body.admin-bar #header {
+  top: 28px; }
+
+.site-header .wrap {
+  padding: 10px 0;
+  margin-right: 20px !important;
+  margin-left: 60px; }
+
 button#support-us-button {
 	border-radius: 2px;
 }
