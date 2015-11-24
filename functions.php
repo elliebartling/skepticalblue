@@ -400,7 +400,7 @@ function jeherve_custom_image( $media, $post_id, $args ) {
     }
 }
 add_filter( 'jetpack_images_get_images', 'jeherve_custom_image', 10, 3 );
-
+add_filter( 'jetpack_enable_open_graph', '__return_false' );
 
 //* Customize the post meta function
 add_filter( 'genesis_post_meta', 'sp_post_meta_filter' );
