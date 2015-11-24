@@ -362,7 +362,7 @@ function fb_opengraph() {
     elseif (is_home()) {
     	$img_src = get_stylesheet_directory_uri() . '/img/TSL-eyes-large.png';
     	$excerpt = "Free thought. Free people.";
-    	$title = "Home";
+    	$title = "The Skeptical Libertarian | Home";
     	$link = "http://www.skepticallibertarian.com/";
     }
     else {

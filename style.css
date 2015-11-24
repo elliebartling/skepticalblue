@@ -1665,7 +1665,7 @@ nav.mm-menu {
 
 #header {
   padding: 0px 10px;
-  top: auto !important; }
+  top: 10px !important; }
 
 a.mm-title {
   display: none; }
