@@ -2886,15 +2886,17 @@ body.page .entry-content {
 body.page .entry-content h1:first-of-type {
   order: 0;
   text-align: center;
-  margin: auto; }
+  margin: auto;
+  margin-bottom: 20px; }
 
 body.page .entry-content p:first-of-type {
   order: 1;
   margin: auto;
   margin-bottom: 40px; }
 
-body.page .entry-content button {
-  order: 2; }
+body.page .entry-content a {
+  order: 2;
+  margin: auto; }
 
 #amazon {
   background-color: #FFF;
@@ -2954,6 +2956,11 @@ button#support-us-button span {
 article.teaser {
   border-radius: 0px;
   box-shadow: 0px 0px 0px; }
+
+a {
+  color: #0BB4C9; }
+  a:hover {
+    color: #F1A069; }
 
 /* Masonry Test Styles */
 .brick {

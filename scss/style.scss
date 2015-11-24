@@ -103,6 +103,12 @@ article.teaser {
 	box-shadow: $box-shadow;
 }
 
+a {
+	color: $sea-blue;
+	&:hover {
+		color: $orange;
+	}
+}
 
 
 

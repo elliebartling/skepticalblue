@@ -8,6 +8,7 @@ body.page .entry-content h1:first-of-type {
 	order: 0;
 	text-align: center;
 	margin: auto;
+	margin-bottom: 20px;
 }
 
 body.page .entry-content p:first-of-type {
@@ -16,8 +17,9 @@ body.page .entry-content p:first-of-type {
 	margin-bottom: 40px;
 }
 
-body.page .entry-content button {
+body.page .entry-content a {
 	order: 2;
+	margin: auto;
 }
 
 #amazon {
