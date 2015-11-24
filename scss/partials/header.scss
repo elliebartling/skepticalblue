@@ -14,6 +14,7 @@ header .wrap {
 .title-area {
 	order: 1;
 	flex-grow:2;
+	margin-right: 50px;
 }
 
 .header-widget-area {
@@ -42,12 +43,17 @@ button#support-us-button {
 	}
 
 	.widget-area.header-widget-area {
-		width: 130px;
+		width: auto !important;
 	}
 
 	.title-area
 	{
 		width: 100% !important;
+		margin: auto !important;
+	}
+
+	.header-left.widget-area {
+		display: none;
 	}
 
 }
