@@ -162,12 +162,21 @@ li.wp_rss_retriever_item {
 		padding: 10% 10% 0%;
 	}
 
-	body.home .entry-content {
+	body.home .content article .entry-content {
 		padding: 10% 10% 0%;
 	}
 
 	body.home .entry-content p:last-of-type {
 		display:none;
+	}
+
+	#sidebar-featured-post .featured-content .widget-wrap article .entry-header {
+		color: #FFF;
+		position: relative;
+		top: 5%;
+		left:5%;
+		padding-right: 5%;
+		max-width: 600px;
 	}
 }
 
