@@ -158,15 +158,15 @@ li.wp_rss_retriever_item {
 		margin-right: 5%;
 	}
 
-	body.home .entry-header {
+	.content article .entry-header {
 		padding: 5% 5% 0%;
 	}
 
-	body.home .entry-header .entry-meta {
+	.content article .entry-header .entry-meta {
 		font-style: italic;
 	}
 
-	body.home .content article .entry-content {
+	 .content article .entry-content {
 		padding: 0% 5% 0%;
 	}
 
@@ -182,6 +182,7 @@ li.wp_rss_retriever_item {
 		padding-right: 5%;
 		max-width: 600px;
 	}
+
 }
 
 
