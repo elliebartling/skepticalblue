@@ -44,7 +44,7 @@ li.wp_rss_retriever_item {
 	
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
 	li.wp_rss_retriever_item {
 		width: 48% !important;
 	}
@@ -89,15 +89,30 @@ li.wp_rss_retriever_item {
 
 /* Swag Box */
 
-@media only screen and (max-width: 800px) {
+/*#sidebar-swag li {
+	position: none !important;
+}*/
+
+@media only screen and (max-width: 1100px) {
 	#sidebar-swag .wp_rss_retriever_item:nth-of-type(3){
 		display: none;
+	}
+
+	#sidebar-swag li {
+		position: relative !important;
+		left: 0 !important;
 	}
 
 	/*#sidebar-swag .wp_rss_retriever_item {
 		margin-bottom: 40px !important;
 	}*/
 }	
+@media only screen and (max-width: 1100px) {
+	#sidebar-swag .wp_rss_retriever_item:nth-of-type(3),
+	#sidebar-swag .wp_rss_retriever_item:nth-of-type(2){
+		display: none;
+	}
+}
 
 
 /* Author Archive Page */
