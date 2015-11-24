@@ -166,8 +166,8 @@ li.wp_rss_retriever_item {
 		font-style: italic;
 	}
 
-	 .content article .entry-content {
-		padding: 0% 5% 0%;
+	.content article .entry-content {
+		padding: 0% 5% 0% !important;
 	}
 
 	body.home .entry-content p:last-of-type {
@@ -177,8 +177,8 @@ li.wp_rss_retriever_item {
 	#sidebar-featured-post .featured-content .widget-wrap article .entry-header {
 		color: #FFF;
 		position: relative;
-		top: 0;
-		left:0;
+		top: 5%;
+		left:5%;
 		padding-right: 5%;
 		max-width: 600px;
 	}
