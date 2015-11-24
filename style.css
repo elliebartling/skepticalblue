@@ -1664,7 +1664,8 @@ nav.mm-menu {
   padding-top: 40px; }
 
 #header {
-  padding: 10px 10px; }
+  padding: 0px 10px;
+  top: auto !important; }
 
 a.mm-title {
   display: none; }
@@ -1725,7 +1726,8 @@ header .wrap {
 
 .title-area {
   order: 1;
-  flex-grow: 2; }
+  flex-grow: 2;
+  margin-right: 50px; }
 
 .header-widget-area {
   order: 2; }
@@ -1744,10 +1746,14 @@ button#support-us-button {
     display: none; }
 
   .widget-area.header-widget-area {
-    width: 130px; }
+    width: auto !important; }
 
   .title-area {
-    width: 100% !important; } }
+    width: 100% !important;
+    margin: auto !important; }
+
+  .header-left.widget-area {
+    display: none; } }
 @media only screen and (max-width: 590px) {
   h1.site-title {
     display: none; }
@@ -2568,6 +2574,10 @@ body#cards {
 .card.article {
   background-color: red !important; }
 
+/*.embedly-card:before {
+	content: "whatsup";
+	display: none;
+}*/
 .pagination {
   text-align: center; }
 
