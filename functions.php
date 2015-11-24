@@ -256,9 +256,12 @@ function sb_add_modal() {
 		        <p>If you enjoy what we do and want to help keep us going, please consider buying us a cup of liquid awakeness.</p>
 		      </div>
 		      <div class="modal-body">
-		        <button type="button" class="donation-button" id="paypal">donate with<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/paypal-logo.png"></button>
-		        <button type="button" class="donation-button" id="coinbase">donate with<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/coinbase-logo.png"></button>
-		        <button type="button" class="donation-button" id="swag-store">TSL Swag Store</button>
+		        <?php
+		        	echo do_shortcode('[paypal_button]');
+		        	echo do_shortcode('[coinbase_button]');
+		        	echo do_shortcode('[amazon_button]');
+		        	echo do_shortcode('[swag_button]');
+		        ?>
 		      </div>
 		      <div class="modal-footer">
 		      </div>

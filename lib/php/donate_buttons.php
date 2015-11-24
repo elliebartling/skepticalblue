@@ -1,13 +1,13 @@
 <?php
 
 function paypal_button() {
-	echo '<button type="button" class="donation-button" id="paypal">donate with<img src="' . get_stylesheet_directory_uri() . '/img/paypal-logo.png"></button>';
+	echo '<button type="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9VBJ2FDVY6FM4" class="donation-button" id="paypal">donate with<img src="' . get_stylesheet_directory_uri() . '/img/paypal-logo.png"></button>';
 }
 
 add_shortcode('paypal_button', 'paypal_button');
 
 function coinbase_button() {
-	echo '<button type="button" class="donation-button" id="coinbase">donate with<img src="' . get_stylesheet_directory_uri() . '/img/coinbase-logo.png"></button>';
+	echo '<button type="button" href="https://www.coinbase.com/SkepticLiberty" class="donation-button" id="coinbase">donate with<img src="' . get_stylesheet_directory_uri() . '/img/coinbase-logo.png"></button>';
 }
 
 add_shortcode('coinbase_button', 'coinbase_button');
@@ -18,6 +18,6 @@ function swag_button() {
 add_shortcode('swag_button', 'swag_button');
 
 function amazon_button() {
-	echo '<button href="http://localhost:5757/wordpress-TSL/donate/www.amazon.com/?&tag=theskeptliber-20&camp=216797&creative=394565&linkCode=ur1&adid=0WDDJAP7G0BZXE8HK8N9&&ref-refURL=http%3A%2F%2Frcm.amazon.com%2Fe%2Fcm%3Ft%3Dtheskeptliber-20%26o%3D1%26p%3D12%26l%3Dur1%26category%3Damazonhomepage%26f%3Difr" target="_blank" type="button" class="donation-button" id="amazon">Shop with Amazon<img src="' . get_stylesheet_directory_uri() . '/img/amazon-logo.png"></button>';
+	echo '<button href="http://www.amazon.com/?&tag=skepticliberty-20" target="_blank" type="button" class="donation-button" id="amazon">Shop with Amazon<img src="' . get_stylesheet_directory_uri() . '/img/amazon-logo.png"></button>';
 }
 add_shortcode('amazon_button', 'amazon_button');
