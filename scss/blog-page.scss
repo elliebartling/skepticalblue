@@ -1,8 +1,19 @@
-body.page-template-blog .entry-content {
-	max-width: 100%;
-}
-
-body.page-template-blog .archive-title {
+body.page-template-blog  {
+	.archive-title {
 	text-align: center;
+	}
+
+	.entry-content {
+		max-width: 100%;
+
+		a .entry-author {
+			color: $sea-blue;
+			&:hover {
+				color: $orange;
+			}
+		}
+
+
+	}
 }
 

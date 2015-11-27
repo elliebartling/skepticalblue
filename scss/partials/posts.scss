@@ -27,6 +27,7 @@
 
 .content article {
 	overflow: hidden;
+	background-size: cover !important;
 }
 
 body.archive .content article a img {
@@ -58,13 +59,16 @@ body.archive .content article a img {
 
 }
 
-body.home .content article .entry-content,
-body.archive .content article .entry-content,
-body.page-template-blog .content article .entry-content,
- {
-	padding: 10px 60px 0px;
-	display: flex;
-	flex-flow: row wrap;
+body.home, body.search, body.archive, body.page-template-blog {
+
+	 .content article .entry-content,
+	 .content article .entry-content,
+	 .content article .entry-content,
+	 {
+		padding: 10px 60px 0px;
+		display: flex;
+		flex-flow: row wrap;
+	}
 }
 
 .content article .entry-footer {
@@ -125,17 +129,31 @@ h2.entry-title a:hover, h2.entry-title a:active {
 	display: inline;
 }
 
-body.home .has-post-thumbnail,
+
+body.home, body.archive, body.search {
+
+	.has-post-thumbnail,
+	.has-post-thumbnail a,
+	.has-post-thumbnail .entry-content p {
+		color: #FFF;
+		.entry-author-name {
+			background-size: cover !important;
+			background-position: 50% 50% !important;
+			color: #FFFFFF !important;
+			overflow: hidden;
+		}
+
+	}
+}
+
+/*body.home .has-post-thumbnail,
 body.archive .has-post-thumbnail,
 body.home .has-post-thumbnail a,
 body.archive .has-post-thumbnail a,
 body.home .has-post-thumbnail a .entry-author-name,
 body.archive .has-post-thumbnail a .entry-author-name {
-	background-size: cover !important;
-	background-position: 50% 50% !important;
-	color: #FFFFFF !important;
-	overflow: hidden;
-}
+
+}*/
 
 .entry-wrap-div {
   content: " ";

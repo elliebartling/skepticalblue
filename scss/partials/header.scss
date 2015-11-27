@@ -1,6 +1,26 @@
 header .wrap {
 	display: flex;
 	flex-flow: row;
+
+	.widget.widget_search {
+		width: 200px;
+		
+		input {
+			width: 48px;
+			float:left;
+			border-radius: 50px;
+			margin-left: 10px;
+			text-indent: 20px;
+			content: "";
+			background: url(img/search.png);
+			background-repeat: no-repeat;
+			background-size: 20px 20px;
+			background-position: 13px 50%;
+			&:focus {
+				width: 100%;
+			}
+		}
+	}
 }
 
 .title-area, .header-widget-area, .header-left.widget-area {

@@ -77,11 +77,13 @@ global $post;
 				echo '<h2 class="entry-title"> <a href="' . get_permalink() .'"> '. get_the_title() .' </a> </h2>'; // show the title
 				echo '<p class="entry-meta"><time class="entry-time" datetime="' . $time . '">' . $time . '</time>';
 				echo ' by ';
+				echo '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' )) . '">';
 				echo '<span class="entry-author" itemtype="http://schema.org/Person">' . get_the_author() . '</span>';
-				echo '<a href="' . get_permalink() .'" title="' . the_title_attribute( 'echo=0' ) . '">'; // Original Grid
+				echo '</a>';
+				// echo '<a href="' . get_permalink() .'" title="' . the_title_attribute( 'echo=0' ) . '">'; // Original Grid
 				echo '<p>' . the_excerpt() . '</p>';
 				echo '<p> <a class="more-link" href="' . get_permalink() .'">Read more »</a></p>';
-				echo '</a>';
+				// echo '</a>';
 				echo '</div>';
 				echo '<footer class="entry-footer"></footer>';
 			echo '</article>';

@@ -62,11 +62,14 @@ body.modal-open .site-container, body.modal-open #header  {
 	background-color: transparent;
 	border: 1px solid #EDEDEE;
 	border-radius: 4px;
-	font-size: 12px;
-	font-weight: 900;
-	font-family: Open Sans;
 	padding: 15px;
 	width: 270px;
+
+	a {
+		font-size: 12px;
+		font-weight: 900;
+		font-family: $avenir-light;
+	}
 }
 
 .donation-button img {

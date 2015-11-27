@@ -32,6 +32,7 @@ function wpstudio_load_scripts_frontpage() {
     wp_enqueue_script( 'jquery-isotope', get_stylesheet_directory_uri() . '/js/jquery/isotope.pkgd.min.js', array('jquery')
     	, true );
     wp_enqueue_script( 'masonry-reload', get_stylesheet_directory_uri() . '/js/masonry-reload.js');
+    wp_enqueue_script( 'cursor-at-end', get_stylesheet_directory_uri() . '/js/cursor-at-end.js', array('jquery'));
 }
 add_action('wp_enqueue_scripts', 'wpstudio_load_scripts_frontpage');
 
@@ -208,7 +209,7 @@ add_action( 'genesis_header', 'wpsites_left_header_widget', 11 );
 //* Customize search form input button text
 add_filter( 'genesis_search_text', 'wpsites_icon_inside_input' );
 function wpsites_icon_inside_input( $text ) {
-	return esc_attr( '&#xf002;' );
+	return esc_attr( ' ' );
 }
 
 add_filter( 'genesis_search_button_text', 'modify_search_button_text' );
@@ -627,9 +628,11 @@ function contributors() {
 		echo '<h4 class="contributor-name">';
 		the_author_meta('display_name', $author->ID);
 		echo '</h4>';
-		echo '<h5>';
-		the_author_meta('university', $author->ID);
-		echo '</h5>';
+		if( get_the_author_meta('university', $author->ID) != '') {
+			echo '<h5>';
+			the_author_meta('university', $author->ID);
+			echo '</h5>';
+		}
 		echo "</a>";
 
 
@@ -681,9 +684,11 @@ function editors() {
 		echo "\">";
 		the_author_meta('display_name', $editor->ID);
 		echo '</h2>';
-		echo '<h5 class="editor-university">';
-		the_author_meta('university', $editor->ID);
-		echo '</h5>';
+		if( get_the_author_meta('university', $editor->ID) != '') {
+			echo '<h5 class="editor-university">';
+			the_author_meta('university', $editor->ID);
+			echo '</h5>';
+		}
 		echo "</a>";
 		echo '<div class="contact-links"><ul class="social-links">';
  
@@ -952,7 +957,10 @@ function sb_alt_author_box() {
 				?></div>
 			<div class="about-author">
 				<h4><?php echo get_the_author(); ?></h4>
-				<h5><?php echo get_the_author_meta('specialization'); echo ', '; echo get_the_author_meta('university'); ?></h5>
+				<?php
+				if ( get_the_author_meta('specialization') != '') { ?>
+					<h5><?php echo get_the_author_meta('specialization'); echo ', '; echo get_the_author_meta('university'); ?></h5>
+					<?php } ?>
 				<p><?php echo get_the_author_meta( 'description' ); ?> 
 			</div>
 			<div class="contact-links">

@@ -22,8 +22,10 @@
 	background-color: transparent;
 	overflow: hidden;
 	height:600px;
-	width: 100% !important;
+	width: 100%;
 	background-color: $sea-blue;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
 }
 
 #sidebar-featured-post .featured-content .widget-wrap article img {
