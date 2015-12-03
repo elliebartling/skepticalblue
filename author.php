@@ -40,10 +40,7 @@ add_action('genesis_before_loop', 'skeptical_add_div');
 add_action('genesis_after_loop', 'skeptical_close_div');
 
 
-
-
-
-add_action( 'pre_get_posts', 'be_change_event_posts_per_page' );
+add_action( 'pre_get_posts', 'be_change_author_posts_per_page' );
 /**
  * Change Posts Per Page for Event Archive
  * 
@@ -52,8 +49,10 @@ add_action( 'pre_get_posts', 'be_change_event_posts_per_page' );
  * @param object $query data
  *
  */
-function be_change_event_posts_per_page( $query ) {
-    $query->set( 'posts_per_page', '6' );
+function be_change_author_posts_per_page( $query ) {
+    if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'author' ) ) {
+      $query->set( 'posts_per_page', '20' );
+    }
 }
 
 
@@ -65,26 +64,6 @@ function filter_buttons() {
   </div>
   <?php
 }
-
-// add_action('genesis_before_content', 'filter_buttons');
-
-// add_action('genesis_loop','load_more');
-// remove_action('genesis_loop', 'genesis_do_loop');
-
-
-// remove_action( 'get_header', 'email_sidebar_logic', 10 );
-// remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
-// remove_action( 'genesis_footer', 'genesis_do_footer' );
-// remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
-
-// add_action( 'pre_get_posts',  'change_number_posts_per_category'  );
-// function change_number_posts_per_category( $query ) {
-
-//     if ( is_author() ) {
-//         $query->set( 'posts_per_page', 10 );
-
-//     return $query;
-// }}
 
 remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 add_action('genesis_after_loop', 'genesis_posts_nav');

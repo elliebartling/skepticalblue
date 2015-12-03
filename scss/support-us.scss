@@ -4,6 +4,35 @@ body.page .entry-content {
 	margin: auto;
 }
 
+@media only screen and (max-width: 900px) {
+	body.page .entry-content {
+		width: auto;
+	}
+
+	body.page.page-template-contributors-template {
+
+		#editors-box-wrapper, #contributors-box-wrapper, #specialthanks-box-wrapper {
+			padding: 5%;
+		}
+
+		#editors-box #editors-content li,
+		#specialthanks-box #specialthanks-content li {
+			width: auto !important;
+			margin-bottom: 40px;
+		}
+
+	}
+
+	body.page.page-template-about-template {
+		.entry-content h1 {
+			font-size: 40px;
+		}
+	}
+
+
+}
+
+
 body.page .entry-content h1:first-of-type {
 	order: 0;
 	text-align: center;
