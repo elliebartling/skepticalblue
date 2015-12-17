@@ -435,7 +435,7 @@ add_image_size( 'featured-image-hardcrop', 1200, 400, true );
 genesis_register_sidebar( array(
 	'id' => 'home-sidebar',
 	'name' => 'Home Sidebar',
-	'description' => 'This is the home sidebar widget area.'
+	'description' => 'This is the featured post sidebar widget area.'
 	));
 
 
@@ -1043,8 +1043,43 @@ function remove_featured_image_archives( $post ) {
 }
 add_filter( 'genesis_pre_get_image', 'remove_featured_image_archives', 10, 3 );
 
+/**
+ * Post Authors Post Link Shortcode
+ *
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/wordpress-post-multiple-authors/
+ * 
+ * @param array $atts
+ * @return string $authors
+ */
+function be_post_authors_post_link_shortcode( $atts ) {
+
+	$atts = shortcode_atts( array( 
+		'between'      => null,
+		'between_last' => null,
+		'before'       => null,
+		'after'        => null
+	), $atts );
+
+	$authors = function_exists( 'coauthors_posts_links' ) ? coauthors_posts_links( $atts['between'], $atts['between_last'], $atts['before'], $atts['after'], false ) : $atts['before'] . get_author_posts_url() . $atts['after'];
+	return $authors;
+}
+add_shortcode( 'post_author_posts_link', 'be_post_authors_post_link_shortcode' );
+add_shortcode( 'post_authors_post_link', 'be_post_authors_post_link_shortcode' );
 
 
-
-
+/**
+ * List Authors in Genesis Post Info
+ *
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/wordpress-post-multiple-authors/
+ *
+ * @param string $info
+ * @return string $info
+ */
+function be_post_info( $info ) {
+	$info = '[post_authors_post_link before="by "]';
+	return $info;
+}
+add_filter( 'genesis_post_info', 'be_post_info' );
 
