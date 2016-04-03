@@ -27,8 +27,9 @@
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: nowrap;
+	justify-content: flex-end;
 }
 
 #sidebar-featured-post .featured-content .widget-wrap article a img,
@@ -49,7 +50,6 @@
 	// top: calc(600px - 30%);
 	left:5%;
 	right: 5%;
-	align-self: flex-end;
 	max-width: 768px;
 }
 
@@ -64,10 +64,12 @@
 
 #sidebar-featured-post .featured-content .widget-wrap article .entry-content {
 	color: #FFF;
-	position: absolute;
-	top:350px;
+	position: relative;
+	// top:350px;
 	left:5%;
 	max-width: 768px;
+
+	order: 2;
 }
 
 #sidebar-featured-post .featured-content .widget-wrap article .entry-content p, {

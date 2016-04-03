@@ -2094,8 +2094,9 @@ body.single a {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap; }
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end; }
 
 #sidebar-featured-post .featured-content .widget-wrap article a img,
 #sidebar-featured-post .featured-content .widget-wrap article a.aligncenter {
@@ -2108,7 +2109,6 @@ body.single a {
   position: relative;
   left: 5%;
   right: 5%;
-  align-self: flex-end;
   max-width: 768px; }
 
 #sidebar-featured-post .featured-content .widget-wrap article .entry-header h2 a {
@@ -2119,10 +2119,10 @@ body.single a {
 
 #sidebar-featured-post .featured-content .widget-wrap article .entry-content {
   color: #FFF;
-  position: absolute;
-  top: 350px;
+  position: relative;
   left: 5%;
-  max-width: 768px; }
+  max-width: 768px;
+  order: 2; }
 
 #sidebar-featured-post .featured-content .widget-wrap article .entry-content p {
   color: #FFF; }

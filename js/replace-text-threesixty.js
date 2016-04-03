@@ -14,15 +14,15 @@ jQuery(document).ready(function($) {
 
 	// Remove IFTTT's quotation marks around
 	// the title of ThreeSixty posts
-	$('#sidebar-ThreeSixty-blog a.wp_rss_retriever_title').each( function() {
-		var rssTitle = $(this).text();
-		rssTitle = rssTitle.slice(1,-1);
+	// $('#sidebar-ThreeSixty-blog a.wp_rss_retriever_title').each( function() {
+	// 	var rssTitle = $(this).text();
+	// 	rssTitle = rssTitle.slice(1,-1);
 
-		$(this).text(function() {
-			return rssTitle;
-		});
+	// 	$(this).text(function() {
+	// 		return rssTitle;
+	// 	});
 		
-		console.log(rssTitle);
+	// 	console.log(rssTitle);
 
-	});
+	// });
 });
