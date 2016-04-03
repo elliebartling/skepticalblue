@@ -1933,7 +1933,7 @@ body.archive .content article .entry-content,
 body.archive .content article .entry-content, body.page-template-blog .content article .entry-content,
 body.page-template-blog .content article .entry-content,
 body.page-template-blog .content article .entry-content {
-  padding: 10px 60px 0px;
+  padding: 10px 60px 40px;
   display: flex;
   flex-flow: row wrap; }
 
