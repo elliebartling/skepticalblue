@@ -342,7 +342,7 @@ function fb_opengraph() {
     <meta property="og:title" content="<?php echo $title ?>"/>
     <meta property="og:description" content="<?php echo $excerpt; ?>"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content="<?php echo $link ?>"/>
+    
     <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
     <meta property="og:image" content="<?php echo $img_src; ?>"/>
  
