@@ -6,6 +6,10 @@ function sb_load_scripts_threesixty() {
 }
 add_action('wp_enqueue_scripts', 'sb_load_scripts_threesixty');
 
+if (coauthors() == "The Skeptical Libertarian") {
+	remove_action('genesis_after_entry', 'genesis_do_author_box_single', 8);
+}
+
 
 
 genesis();
