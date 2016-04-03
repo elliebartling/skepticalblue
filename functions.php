@@ -90,26 +90,27 @@ add_action('wp_head', 'set_facebook_meta_tags');
 
 add_action( 'wp_enqueue_scripts', 'skepticalblue_load_scripts');
 function skepticalblue_load_scripts() {
-	wp_enqueue_script( 'mansonry-init',  get_stylesheet_directory_uri() . '/js/init-masonry.min.js', array('jquery'),null, true );
-    wp_enqueue_script( 'jquery-masonry', get_stylesheet_directory_uri() . '/js/masonry.pkgd.js', array('jquery'), false, true );
-    wp_enqueue_script( 'jquery-isotope', get_stylesheet_directory_uri() . '/js/jquery/isotope.pkgd.min.js', array('jquery'), false, true );
-    // wp_enqueue_script( 'masonry-reload', get_stylesheet_directory_uri() . '/js/masonry-reload.js');
-    wp_enqueue_script( 'cursor-at-end', get_stylesheet_directory_uri() . '/js/cursor-at-end.js', array('jquery'), false, true);
+	// wp_enqueue_script( 'mansonry-init',  get_stylesheet_directory_uri() . '/js/init-masonry.min.js', array('jquery'),null, true );
+ //    wp_enqueue_script( 'jquery-masonry', get_stylesheet_directory_uri() . '/js/masonry.pkgd.js', array('jquery'), false, true );
+ //    wp_enqueue_script( 'jquery-isotope', get_stylesheet_directory_uri() . '/js/jquery/isotope.pkgd.min.js', array('jquery'), false, true );
+ //    // wp_enqueue_script( 'masonry-reload', get_stylesheet_directory_uri() . '/js/masonry-reload.js');
+ //    wp_enqueue_script( 'cursor-at-end', get_stylesheet_directory_uri() . '/js/cursor-at-end.js', array('jquery'), false, true);
 
 	// MMenu CSS
 	wp_enqueue_style( 'skepticalblue_mmenu_css' , CHILD_URL . '/css/jquery.mmenu.css' , null );
 	// MMenu JS
-	wp_enqueue_script( 'skepticalblue_mmenu_js' , CHILD_URL . '/js/jquery.mmenu.min.js' , array( 'jquery' ), '4.2.6', FALSE ); // mmenu js
-	wp_enqueue_script( 'skepticalblue_headerscript_js' , CHILD_URL . '/js/headerscript.js' , array( 'jquery' ), '1.0', FALSE ); // custom header j
-	// wp_enqueue_script( 'skepticalblue_mmenu_thing_js' , CHILD_URL . '/js/jquery.mmenu.wordpress.min.js' , array( 'jquery' ), '1.0', FALSE );
-	wp_enqueue_script( 'skepticalblue_replacetext_js' , CHILD_URL . '/js/replace-text-threesixty.js' , array( 'jquery' ), '1.0', true ); 
-	// wp_enqueue_script( 'skepticalblue_masonry_js' , CHILD_URL . '/js/masonry-options.js' , array( 'jquery' ), '1.0', FALSE ); 
+	// wp_enqueue_script( 'skepticalblue_mmenu_js' , CHILD_URL . '/js/jquery.mmenu.min.js' , array( 'jquery' ), '4.2.6', FALSE ); // mmenu js
+	// wp_enqueue_script( 'skepticalblue_headerscript_js' , CHILD_URL . '/js/headerscript.js' , array( 'jquery' ), '1.0', FALSE ); // custom header j
+	// // wp_enqueue_script( 'skepticalblue_mmenu_thing_js' , CHILD_URL . '/js/jquery.mmenu.wordpress.min.js' , array( 'jquery' ), '1.0', FALSE );
+	// wp_enqueue_script( 'skepticalblue_replacetext_js' , CHILD_URL . '/js/replace-text-threesixty.js' , array( 'jquery' ), '1.0', true ); 
+	// // wp_enqueue_script( 'skepticalblue_masonry_js' , CHILD_URL . '/js/masonry-options.js' , array( 'jquery' ), '1.0', FALSE ); 
 
 	// Fontawesome
 	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '4.1.0' );
 
 	// Sticky header
 	// wp_enqueue_script( 'sticky-header', get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.sticky.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'skeptical-blue-scripts' , CHILD_URL . '/js/scripts.js' , array( 'jquery' ), '', FALSE ); // Compiled scripts
 }
 
 
