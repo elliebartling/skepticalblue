@@ -8,6 +8,7 @@ function skepticalblue_load_masonry() {
     wp_enqueue_script( 'mansonry-init',  get_stylesheet_directory_uri() . '/js/init-masonry.min.js', array('jquery'),null, true );
     wp_enqueue_script( 'jquery-masonry', get_stylesheet_directory_uri() . '/js/masonry.pkgd.js', array('jquery'), true );
     wp_enqueue_script( 'masonry-reload', get_stylesheet_directory_uri() . '/js/masonry-reload.js', array('jquery'));
+    ?> <!-- Hey is this working? --> <?php
 }
 add_action('wp_enqueue_scripts', 'skepticalblue_load_masonry');
 
