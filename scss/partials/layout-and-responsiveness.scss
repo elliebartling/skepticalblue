@@ -120,14 +120,16 @@ li.wp_rss_retriever_item {
 
 @media only screen and (max-width: 1400px) {
 	body.archive article.brick,
-	body.page-template-blog article.brick {
+	body.page-template-blog article.brick,
+	body.page-template-threesixty-template article.brick {
 		width: 46% !important;
 	}
 }
 
 @media only screen and (max-width: 1120px) {
 	body.archive article.brick,
-	body.page-template-blog article.brick {
+	body.page-template-blog article.brick,
+	body.page-template-threesixty-template article.brick {
 		width: 45% !important;
 	}
 }
@@ -135,7 +137,8 @@ li.wp_rss_retriever_item {
 
 @media only screen and (max-width: 900px) {
 	body.archive article.brick,
-	body.page-template-blog article.brick {
+	body.page-template-blog article.brick,
+	body.page-template-threesixty-template article.brick {
 		width: 100% !important;
 		margin: auto !important;
 		margin-bottom: 20px !important;

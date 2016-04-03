@@ -2272,133 +2272,6 @@ body.single a {
         -ms-flex-positive: 1;
             flex-grow: 1;
     /*max-width: 200px !important;*/ } }
-#sidebar-ThreeSixty-blog {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 60px;
-  margin-bottom: 60px; }
-
-#sidebar-ThreeSixty-blog .widget-title {
-  display: none; }
-
-#sidebar-ThreeSixty-blog ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-
-#sidebar-ThreeSixty-blog li {
-  width: 32%;
-  margin-top: 20px; }
-
-#sidebar-ThreeSixty-blog li a.wp_rss_retriever_title {
-  display: block;
-  padding: 0 0 20px 0;
-  font-family: "TradeGothicW01-BoldCn20_675334";
-  text-transform: uppercase;
-  font-size: 28px;
-  line-height: 1.2; }
-  #sidebar-ThreeSixty-blog li a.wp_rss_retriever_title:hover {
-    color: #F1A069; }
-
-#sidebar-ThreeSixty-blog li .wp_rss_retriever_item_wrapper {
-  padding: 40px 40px 30px 40px;
-  background-color: #FFF;
-  border-radius: 0px;
-  box-shadow: 0px 0px 0px; }
-
-div.wp_rss_retriever_container p:nth-last-of-type(1) {
-  display: none !important; }
-
-a.wp_rss_retriever_readmore {
-  font-style: italic;
-  color: #0BB4C9;
-  font-weight: 500;
-  font-size: 16px;
-  display: block;
-  width: 100%;
-  text-align: right; }
-  a.wp_rss_retriever_readmore:hover {
-    color: #F1A069; }
-
-/* Rearrange content of feed items */
-#sidebar-ThreeSixty-blog .feed-item {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start; }
-
-#sidebar-ThreeSixty-blog li div p {
-  display: block;
-  -webkit-box-ordinal-group: 3;
-  -webkit-order: 2;
-      -ms-flex-order: 2;
-          order: 2;
-  width: 100%; }
-
-#sidebar-ThreeSixty-blog li div p:last-child {
-  -webkit-box-ordinal-group: 1;
-  -webkit-order: 0;
-      -ms-flex-order: 0;
-          order: 0;
-  margin-top: -20px;
-  margin-bottom: -5px; }
-
-#sidebar-ThreeSixty-blog li div p a {
-  display: block;
-  -webkit-box-ordinal-group: 1;
-  -webkit-order: 0;
-      -ms-flex-order: 0;
-          order: 0;
-  width: 100%;
-  font-family: "TradeGothicW01-BoldCn20_675334";
-  font-size: 28px;
-  text-transform: uppercase;
-  line-height: 1.2; }
-
-/* ThreeSixty header + description */
-table.content-subhead,
-table.content-subhead tbody,
-table.content-subhead tr,
-table.content-subhead td {
-  border-color: transparent;
-  padding: 0;
-  margin-bottom: 0; }
-
-table.content-subhead tr td:first-of-type {
-  width: 70%; }
-
-p.content-desc {
-  float: none;
-  line-height: 1.2 !important;
-  text-align: left; }
-
-p.content-all {
-  float: right !important;
-  display: block;
-  background-color: #0BB4C9;
-  padding: 5px 20px;
-  border-radius: 2px;
-  color: #FFF; }
-  p.content-all:hover {
-    background-color: #F1A069; }
-
 #swag-container {
   width: 100%;
   height: 550px;
@@ -2691,15 +2564,18 @@ li.wp_rss_retriever_item {
 /* Author Archive Page */
 @media only screen and (max-width: 1400px) {
   body.archive article.brick,
-  body.page-template-blog article.brick {
+  body.page-template-blog article.brick,
+  body.page-template-threesixty-template article.brick {
     width: 46% !important; } }
 @media only screen and (max-width: 1120px) {
   body.archive article.brick,
-  body.page-template-blog article.brick {
+  body.page-template-blog article.brick,
+  body.page-template-threesixty-template article.brick {
     width: 45% !important; } }
 @media only screen and (max-width: 900px) {
   body.archive article.brick,
-  body.page-template-blog article.brick {
+  body.page-template-blog article.brick,
+  body.page-template-threesixty-template article.brick {
     width: 100% !important;
     margin: auto !important;
     margin-bottom: 20px !important; } }
@@ -3188,6 +3064,149 @@ button#support-us-button span {
   color: #FFF; }
   button#support-us-button span:hover {
     color: #FFF !important; }
+
+#sidebar-ThreeSixty-blog {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 60px; }
+
+#sidebar-ThreeSixty-blog .widget-title {
+  display: none; }
+
+#sidebar-ThreeSixty-blog ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+#sidebar-ThreeSixty-blog li {
+  width: 32%;
+  margin-top: 20px; }
+
+#sidebar-ThreeSixty-blog li a.wp_rss_retriever_title {
+  display: block;
+  padding: 0 0 20px 0;
+  font-family: "TradeGothicW01-BoldCn20_675334";
+  text-transform: uppercase;
+  font-size: 28px;
+  line-height: 1.2; }
+  #sidebar-ThreeSixty-blog li a.wp_rss_retriever_title:hover {
+    color: #F1A069; }
+
+#sidebar-ThreeSixty-blog li .wp_rss_retriever_item_wrapper {
+  padding: 40px 40px 30px 40px;
+  background-color: #FFF;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px; }
+
+div.wp_rss_retriever_container p:nth-last-of-type(1) {
+  display: none !important; }
+
+a.wp_rss_retriever_readmore {
+  font-style: italic;
+  color: #0BB4C9;
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  text-align: right; }
+  a.wp_rss_retriever_readmore:hover {
+    color: #F1A069; }
+
+/* Rearrange content of feed items */
+#sidebar-ThreeSixty-blog .feed-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
+#sidebar-ThreeSixty-blog li div p {
+  display: block;
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 100%; }
+
+#sidebar-ThreeSixty-blog li div p:last-child {
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+      -ms-flex-order: 0;
+          order: 0;
+  margin-top: -20px;
+  margin-bottom: -5px; }
+
+#sidebar-ThreeSixty-blog li div p a {
+  display: block;
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+      -ms-flex-order: 0;
+          order: 0;
+  width: 100%;
+  font-family: "TradeGothicW01-BoldCn20_675334";
+  font-size: 28px;
+  text-transform: uppercase;
+  line-height: 1.2; }
+
+/* ThreeSixty header + description */
+table.content-subhead,
+table.content-subhead tbody,
+table.content-subhead tr,
+table.content-subhead td {
+  border-color: transparent;
+  padding: 0;
+  margin-bottom: 0; }
+
+table.content-subhead tr td:first-of-type {
+  width: 70%; }
+
+p.content-desc {
+  float: none;
+  line-height: 1.2 !important;
+  text-align: left; }
+
+p.content-all {
+  float: right !important;
+  display: block;
+  background-color: #0BB4C9;
+  padding: 5px 20px;
+  border-radius: 2px;
+  color: #FFF; }
+  p.content-all:hover {
+    background-color: #F1A069; }
+
+/* ThreeSixty blog archive */
+body.page-template-threesixty-template .entry-content {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 a:focus {
   outline: none; }

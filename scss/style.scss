@@ -39,7 +39,7 @@ $box-shadow: 0px 0px 0px;
 @import "partials/posts.scss";
 @import "partials/first-post.scss";
 @import "partials/email-capture-bar.scss";
-@import "partials/threesixty.scss";
+
 @import "partials/swag.scss";
 @import "partials/author-box.scss";
 @import "partials/layout-and-responsiveness.scss";
@@ -53,6 +53,7 @@ $box-shadow: 0px 0px 0px;
 @import "page-template-about.scss";
 @import "contributors.scss";
 @import "support-us.scss";
+@import "partials/threesixty.scss";
 
 a:focus {
 	outline: none;
