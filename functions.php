@@ -64,11 +64,14 @@ function set_facebook_meta_tags() {
 		/>
 		<meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
 		<meta property="og:author" content="<?php 
-		if (the_author() != "") {
+		if (coauthors() == "") {
 			the_author();
 		}
-		else {
+		elseif (coauthors() != "") {
 			coauthors(); 
+		}
+		else {
+			echo "";
 		}?>"/>
 		<!-- End Open Graph Meta Tags !-->
 		<?php
