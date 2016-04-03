@@ -26,22 +26,30 @@
 	background-color: $sea-blue;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }
 
-#sidebar-featured-post .featured-content .widget-wrap article img {
-	width:100%;
-	margin-top:-40%;
-	opacity: .3;
-	-webkit-filter: blur(5px) grayscale(100%);
-  	filter: blur(5px) grayscale(100%);
+#sidebar-featured-post .featured-content .widget-wrap article a img,
+#sidebar-featured-post .featured-content .widget-wrap article a.aligncenter {
+	width:0%;
+	display: none;
+	// margin-top:-40%;
+	// opacity: .3;
+	// -webkit-filter: blur(5px) grayscale(100%);
+  	// filter: blur(5px) grayscale(100%);
 
 }
 
 #sidebar-featured-post .featured-content .widget-wrap article .entry-header {
 	color: #FFF;
+	width: 90%;
 	position: relative;
-	top: calc(600px - 30%);
+	// top: calc(600px - 30%);
 	left:5%;
+	right: 5%;
+	align-self: flex-end;
 	max-width: 768px;
 }
 

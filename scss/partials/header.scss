@@ -11,7 +11,7 @@ header .wrap {
 			border-radius: 50px;
 			margin-left: 10px;
 			text-indent: 20px;
-			content: "";
+			// content: "";
 			background: url(img/search.png);
 			background-repeat: no-repeat;
 			background-size: 20px 20px;
@@ -19,6 +19,9 @@ header .wrap {
 			&:focus {
 				width: 100%;
 			}
+		}
+		input::placeholder {
+			content: "";
 		}
 	}
 }

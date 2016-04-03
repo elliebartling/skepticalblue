@@ -1731,13 +1731,14 @@ header .wrap {
       border-radius: 50px;
       margin-left: 10px;
       text-indent: 20px;
-      content: "";
       background: url(img/search.png);
       background-repeat: no-repeat;
       background-size: 20px 20px;
       background-position: 13px 50%; }
       header .wrap .widget.widget_search input:focus {
         width: 100%; }
+    header .wrap .widget.widget_search input::placeholder {
+      content: ""; }
 
 .title-area, .header-widget-area, .header-left.widget-area {
   display: block; }
@@ -2091,20 +2092,23 @@ body.single a {
   width: 100%;
   background-color: #0BB4C9;
   background-repeat: no-repeat !important;
-  background-size: cover !important; }
+  background-size: cover !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
 
-#sidebar-featured-post .featured-content .widget-wrap article img {
-  width: 100%;
-  margin-top: -40%;
-  opacity: .3;
-  -webkit-filter: blur(5px) grayscale(100%);
-  filter: blur(5px) grayscale(100%); }
+#sidebar-featured-post .featured-content .widget-wrap article a img,
+#sidebar-featured-post .featured-content .widget-wrap article a.aligncenter {
+  width: 0%;
+  display: none; }
 
 #sidebar-featured-post .featured-content .widget-wrap article .entry-header {
   color: #FFF;
+  width: 90%;
   position: relative;
-  top: calc(600px - 30%);
   left: 5%;
+  right: 5%;
+  align-self: flex-end;
   max-width: 768px; }
 
 #sidebar-featured-post .featured-content .widget-wrap article .entry-header h2 a {
@@ -2615,7 +2619,8 @@ li.wp_rss_retriever_item {
   #sidebar-featured-post .featured-content .widget-wrap article .entry-header {
     color: #FFF;
     position: relative;
-    top: 5%;
+    top: auto;
+    margin-bottom: 5%;
     left: 5%;
     padding-right: 5%;
     max-width: 600px; } }
@@ -3091,6 +3096,9 @@ Jetpack Sharing
       display: block;
       top: 14.7% !important;
       left: calc(50% - 400px) !important; } }
+
+.error404 .a2a_kit {
+  display: none; }
 
 body.home .a2a_kit, body.search .a2a_kit, body.page .a2a_kit, body.archive .a2a_kit {
   display: none; }
