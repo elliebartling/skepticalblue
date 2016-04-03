@@ -89,7 +89,7 @@ global $post;
 				echo '<p class="entry-meta"><time class="entry-time" datetime="' . $time . '">' . $time . '</time>';
 
 				echo '<p>' . $snippet . '</p>';
-				echo '<p> <a href="' . get_permalink() .'" class="more-link">Read more </a></p>';
+				// echo '<p> <a href="' . get_permalink() .'" class="more-link">Read more </a></p>';
 
 				echo '</div>';
 				echo '<footer class="entry-footer"></footer>';
