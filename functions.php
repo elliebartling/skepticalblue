@@ -63,6 +63,13 @@ function set_facebook_meta_tags() {
 			if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>"
 		/>
 		<meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
+		<meta property="og:author" content="<?php 
+		if (the_author() != "") {
+			the_author();
+		}
+		else {
+			coauthors(); 
+		}?>"/>
 		<!-- End Open Graph Meta Tags !-->
 		<?php
 	}
