@@ -91,7 +91,7 @@ global $post;
 				// echo '<span class="entry-author" itemtype="http://schema.org/Person">' . get_the_author() . '</span>';
 				// echo '<a href="' . get_permalink() .'" title="' . the_title_attribute( 'echo=0' ) . '">'; // Original Grid
 				echo '<p>' . $snippet . '</p>';
-				echo '<p> <a class="more-link" href="' . get_permalink() .'">Read more »</a></p>';
+				echo '<p> <a class="more-link" href="' . get_permalink() . '">Read more </a></p>';
 				// echo '</a>';
 				echo '</div>';
 				echo '<footer class="entry-footer"></footer>';
