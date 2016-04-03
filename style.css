@@ -3207,6 +3207,9 @@ body.page-template-threesixty-template .entry-content {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
+body.page-template-threesixty-template .widget-wrap input {
+  border: transparent;
+  outline: none; }
 
 a:focus {
   outline: none; }
