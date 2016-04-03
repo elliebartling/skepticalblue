@@ -1,14 +1,14 @@
 <?php
-//* this will bring in the Genesis Parent files needed:
+//* Include Genesis parent files
 include_once( get_template_directory() . '/lib/init.php' );
 
 
-//* We tell the name of our child theme
+//* Define our child theme's name
 define( 'SkepticalBlue', __( 'Genesis Child', 'genesischild' ) );
 //* We tell the web address of our child theme (More info & demo)
-define( 'Child_Theme_Url', 'http://gsquaredstudios.com' );
+define( 'Child_Theme_Url', '' );
 //* We tell the version of our child theme
-define( 'Child_Theme_Version', '1.0' );
+define( 'Child_Theme_Version', '1.1' );
 
 //* Add HTML5 markup structure from Genesis
 add_theme_support( 'html5' );
@@ -26,39 +26,6 @@ add_theme_support( 'genesis-custom-header', array(
  
 ) );
 
-function wpstudio_load_scripts_frontpage() {
-    wp_enqueue_script( 'mansonry-init',  get_stylesheet_directory_uri() . '/js/init-masonry.min.js', array('jquery'),null, true );
-    wp_enqueue_script( 'jquery-masonry', get_stylesheet_directory_uri() . '/js/masonry.pkgd.js', array('jquery'), true );
-    wp_enqueue_script( 'jquery-isotope', get_stylesheet_directory_uri() . '/js/jquery/isotope.pkgd.min.js', array('jquery')
-    	, true );
-    wp_enqueue_script( 'masonry-reload', get_stylesheet_directory_uri() . '/js/masonry-reload.js');
-    wp_enqueue_script( 'cursor-at-end', get_stylesheet_directory_uri() . '/js/cursor-at-end.js', array('jquery'));
-}
-add_action('wp_enqueue_scripts', 'wpstudio_load_scripts_frontpage');
-
-// Add custom post class to posts
-// add_filter('post_class', 'wpstudio_custom_post_class');
-// function wpstudio_custom_post_class($classes) {
-//   $new_class = 'brick';
-//   $classes[] = esc_attr(sanitize_html_class($new_class));
-
-//   return $classes;
-// }
-
-// // Register responsive menu script
-// add_action( 'wp_enqueue_scripts', 'prefix_enqueue_scripts' );
-// /**
-//  * Enqueue responsive javascript
-//  * @author Ozzy Rodriguez
-//  * @todo Change 'prefix' to your theme's prefix
-//  */
-// function prefix_enqueue_scripts() {
-// 	wp_enqueue_script( 'skepticalblue-responsive-menu', get_stylesheet_directory_uri() . '/lib/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true ); // Change 'prefix' to your theme's prefix
-// }
-
-// remove_action( 'genesis_header_right', 'genesis_do_nav' );
-// add_action( 'genesis_header', 'genesis_do_nav' );
-
 
 remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
 add_action( 'genesis_site_title', 'child_seo_site_title' );
@@ -73,66 +40,68 @@ function child_seo_site_title() {
 }
 
 
+/**
+ * Custom Facebook open graph images, based on 
+ * the featured image of the post.
+*/
+add_image_size( 'fb-image', 630, 1200 );
+include_once( get_stylesheet_directory_uri() . '/includes/set-facebook-featured-img.php');
 
-
-
-
-//* Add Font Awesome Support
-add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
-function enqueue_font_awesome() {
-	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '4.1.0' );
+function set_facebook_meta_tags() {
+	if (is_single()) {
+		?>
+		<!-- Open Graph Meta Tags for Facebook and LinkedIn Sharing !-->
+		<!-- HEY THIS PLUGIN WORKED -->
+		<meta property="og:title" content="<?php the_title(); ?>"/>
+		<meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+		<meta property="og:url" content="<?php the_permalink(); ?>"/>
+		<?php $fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'fb-image'); ?>
+		<?php if ($fb_image) : ?>
+			<meta property="og:image" content="<?php echo $fb_image[0]; ?>" />
+			<?php endif; ?>
+		<meta property="og:type" content="<?php
+			if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>"
+		/>
+		<meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
+		<!-- End Open Graph Meta Tags !-->
+		<?php
+	}
 }
 
-
+add_action('wp_head', 'set_facebook_meta_tags');
 
 /**********************************
  *
- * Enqueue Style and Scripts for Mmenu.
+ * Enqueue Style and Scripts for MMenu, Masonry, Fontawesome, etc.
  *
- * @author AlphaBlossom / Tony Eppright
- * @link http://www.alphablossom.com
  *
  **********************************/
+
+
 add_action( 'wp_enqueue_scripts', 'skepticalblue_load_scripts');
 function skepticalblue_load_scripts() {
- // CSS
- wp_enqueue_style( 'skepticalblue_mmenu_css' , CHILD_URL . '/css/jquery.mmenu.css' , null );
- // JS
- wp_enqueue_script( 'skepticalblue_mmenu_js' , CHILD_URL . '/js/jquery.mmenu.min.js' , array( 'jquery' ), '4.2.6', FALSE ); // mmenu js
- wp_enqueue_script( 'skepticalblue_headerscript_js' , CHILD_URL . '/js/headerscript.js' , array( 'jquery' ), '1.0', FALSE ); // custom header j
- wp_enqueue_script( 'skepticalblue_headerscript_js' , CHILD_URL . '/js/jquery.mmenu.wordpress.min.js' , array( 'jquery' ), '1.0', FALSE );
- wp_enqueue_script( 'skepticalblue_replacetext_js' , CHILD_URL . '/js/replace-text-threesixty.js' , array( 'jquery' ), '1.0', FALSE ); 
- wp_enqueue_script( 'skepticalblue_masonry_js' , CHILD_URL . '/js/masonry-options.js' , array( 'jquery' ), '1.0', FALSE ); 
+	wp_enqueue_script( 'mansonry-init',  get_stylesheet_directory_uri() . '/js/init-masonry.min.js', array('jquery'),null, true );
+    wp_enqueue_script( 'jquery-masonry', get_stylesheet_directory_uri() . '/js/masonry.pkgd.js', array('jquery'), false, true );
+    wp_enqueue_script( 'jquery-isotope', get_stylesheet_directory_uri() . '/js/jquery/isotope.pkgd.min.js', array('jquery'), false, true );
+    // wp_enqueue_script( 'masonry-reload', get_stylesheet_directory_uri() . '/js/masonry-reload.js');
+    wp_enqueue_script( 'cursor-at-end', get_stylesheet_directory_uri() . '/js/cursor-at-end.js', array('jquery'), false, true);
+
+	// MMenu CSS
+	wp_enqueue_style( 'skepticalblue_mmenu_css' , CHILD_URL . '/css/jquery.mmenu.css' , null );
+	// MMenu JS
+	wp_enqueue_script( 'skepticalblue_mmenu_js' , CHILD_URL . '/js/jquery.mmenu.min.js' , array( 'jquery' ), '4.2.6', FALSE ); // mmenu js
+	wp_enqueue_script( 'skepticalblue_headerscript_js' , CHILD_URL . '/js/headerscript.js' , array( 'jquery' ), '1.0', FALSE ); // custom header j
+	// wp_enqueue_script( 'skepticalblue_mmenu_thing_js' , CHILD_URL . '/js/jquery.mmenu.wordpress.min.js' , array( 'jquery' ), '1.0', FALSE );
+	wp_enqueue_script( 'skepticalblue_replacetext_js' , CHILD_URL . '/js/replace-text-threesixty.js' , array( 'jquery' ), '1.0', true ); 
+	// wp_enqueue_script( 'skepticalblue_masonry_js' , CHILD_URL . '/js/masonry-options.js' , array( 'jquery' ), '1.0', FALSE ); 
+
+	// Fontawesome
+	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '4.1.0' );
+
+	// Sticky header
+	// wp_enqueue_script( 'sticky-header', get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.sticky.js', array( 'jquery' ), '1.0.0', true );
 }
 
-if (! function_exists('slug_scripts_masonry') ) :
-if ( ! is_admin() ) :
-function slug_scripts_masonry() {
-    wp_enqueue_script('masonry');
-    wp_enqueue_style('masonry’, get_template_directory_uri().'/css/’);
-}
-add_action( 'wp_enqueue_scripts', 'slug_scripts_masonry' );
-endif; //! is_admin()
-endif; //! slug_scripts_masonry exists
-
-if ( ! function_exists( 'slug_masonry_init' )) :
-function slug_masonry_init() { ?>
-<script>
-    //set the container that Masonry will be inside of in a var
-    var container = document.querySelector('#masonry-loop');
-    //create empty var msnry
-    var msnry;
-    // initialize Masonry after all images have loaded
-    imagesLoaded( container, function() {
-        msnry = new Masonry( container, {
-            itemSelector: '.masonry-entry'
-        });
-    });
-</script>
-<?php }
-//add to wp_footer
-add_action( 'wp_footer', 'slug_masonry_init' );
-endif; // ! slug_masonry_init exists
 
 /**********************************
  *
@@ -167,20 +136,6 @@ function skepticalblue_nav_control() {
  </a>
  </div>
  <?php
-}
-
-//* Enqueue sticky menu script
-// add_action( 'wp_enqueue_scripts', 'sp_enqueue_script' );
-// function sp_enqueue_script() {
-// 	wp_enqueue_script( 'sample-sticky-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/sticky-menu.js', array( 'jquery' ), '1.0.0' );
-// }
-// //* Reposition the secondary navigation menu
-// remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-// add_action( 'genesis_before', 'genesis_do_subnav' );
-
-add_action( 'wp_enqueue_scripts', 'sp_enqueue_script' );
-function sp_enqueue_script() {
-	wp_enqueue_script( 'sticky-header', get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.sticky.js', array( 'jquery' ), '1.0.0' );
 }
 
 
@@ -229,7 +184,7 @@ add_action( 'genesis_header_right', 'skepticalblue_right_widget', 1);
 function skepticalblue_right_widget() {
 	?>
 	<div id="right-header-widget">
-		<a href="http://twitter.com/skepticallibertarian"><span id="social-twitter" class="fa fa-twitter"></span></a>
+		<a href="http://twitter.com/skepticliberty"><span id="social-twitter" class="fa fa-twitter"></span></a>
 		<a href="http://facebook.com/skepticallibertarian"><span id="social-facebook" class="fa fa-facebook"></span></a>
 		<button id="support-us-button" type="button" data-toggle="modal" data-target="#SupportUs"><span style="text-align:center !important" class="fa fa-heart"></span></button>
 	</div>
@@ -1031,7 +986,7 @@ add_action('genesis_before_content', 'sb_alt_author_box_archive');
 //* Change the footer text
 add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
 function sp_footer_creds_filter( $creds ) {
-	$creds = '[footer_copyright] &middot; <a href="http://www.skepticallibertarian.com">The Skeptical Libertarian</a> &middot; Built on the <a href="http://www.studiopress.com/themes/genesis" title="Genesis Framework">Genesis Framework</a> by <a href="mailto:ellie.bartling@yahoo.com">Ellie Bartling</a>';
+	$creds = '[footer_copyright] &middot; <a href="http://www.skepticallibertarian.com">The Skeptical Libertarian</a> &middot; Built on the <a href="http://www.studiopress.com/themes/genesis" title="Genesis Framework">Genesis Framework</a> by Ellie Bartling';
 	return $creds;
 }
 

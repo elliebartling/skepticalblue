@@ -20,10 +20,17 @@ nav {
 	top: 0;
 	z-index: 2001;
 	border-color: #000455 !important;
+	outline-color: transparent;
+	outline: none;
+ 	
  }
 
- #menu, #menu a, #menu a:visited {
+ #menu, #menu:focus, #menu a, #menu a:visited, #menu a:focus {
  	border-color: #000455 !important;
+ 	border: none;
+ 	outline: none;
+ 	outline-color: transparent;
+ 	outline-width: 0px;
  }
 
  .mm-page #header a {

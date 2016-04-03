@@ -1,6 +1,6 @@
 #email-capture {
 	width: 100%;
-	height: 300px;
+	// height: 300px;
 	text-align: center;
 	color: #FFF;
 	background: url("img/skeptical-email-capture.png");
@@ -18,9 +18,13 @@
 	vertical-align: center;
 }
 
-#email-capture form p#subscribe-email {
-	margin-right: 30px;
+#email-capture .widget-wrap {
+	padding-bottom: 0px;
 }
+
+// #email-capture form p#subscribe-email {
+// 	margin-right: 30px;
+// }
 
 #email-capture label {
 	display: none;
@@ -71,7 +75,6 @@
 	#email-capture .widget-wrap {
 		max-width: 800px !important;
 		margin: auto;
-		margin-bottom: 40px;
 	}
 
 	#email-capture form input[type="text"] {

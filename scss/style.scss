@@ -54,6 +54,11 @@ $box-shadow: 0px 0px 0px;
 @import "contributors.scss";
 @import "support-us.scss";
 
+a:focus {
+	outline: none;
+}
+
+
 .site-inner {
 	margin:0;
 	max-width: 100%;
@@ -152,8 +157,12 @@ Jetpack Sharing
 ---------------------------------------------------------------------------------------------------- */
 
 .a2a_kit {
-	top: 14.7% !important;
-	left: calc(50% - 400px) !important;
+	display: none;
+	@media (min-width: 700px) {
+		display: block;
+		top: 14.7% !important;
+		left: calc(50% - 400px) !important;
+	}
 }
 
 body.home .a2a_kit, body.search .a2a_kit, body.page .a2a_kit, body.archive .a2a_kit {
